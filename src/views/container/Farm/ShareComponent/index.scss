@@ -1,0 +1,56 @@
+.custom-form-antd {
+    .mb-20px {
+        margin-bottom: 20px;
+    }
+    .MuiIcon-root {
+        font-size: 1.8rem !important;
+    }
+    .MuiTableCell-head {
+        font-size: 1.45rem !important;
+    }
+    .MuiTableCell-alignRight {
+        text-align: unset !important;
+        flex-direction: unset !important;
+    }
+    .MuiInputBase-root {
+        font-size: 1.45rem !important;
+    }
+    .MuiTableCell-root {
+        padding: 14px !important;
+        font-size: 1.5rem !important;
+        color: gray;
+    }
+    .MuiTypography-h6 {
+        font-size: 1.65rem !important;
+    }
+    .MuiTableSortLabel-root {
+        line-height: 1.75rem !important;
+    }
+    .MuiTypography-caption {
+        font-size: 1.25rem !important;
+    }
+    .ant-select-selector .ant-select-selection-search input {
+        border: none !important;
+    }
+    .MuiSelect-select {
+        padding-right: 15px !important;
+    }
+
+    .MuiFormControl-root {
+        min-width: 90%;
+    }
+    .MTableToolbar-searchField-37 {
+    }
+    .min-w-90 {
+        min-width: 90%;
+    }
+    .MuiTextField-root {
+        min-width: 30% !important;
+    }
+}
+.MuiTooltip-tooltip {
+    font-size: 1.15rem !important;
+}
+.MuiMenuItem-root {
+    font-size: 1.4rem !important;
+}

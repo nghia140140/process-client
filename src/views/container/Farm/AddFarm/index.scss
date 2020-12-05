@@ -1,0 +1,8 @@
+.invalid {
+    border: 1px solid #ff0202 !important;
+}
+.invalid:focus,
+.ant-input-focused {
+    -webkit-box-shadow: 0 0 0 2px rgba(243, 9, 29, 0.2) !important;
+    box-shadow: 0 0 0 2px rgba(243, 9, 29, 0.2) !important;
+}
