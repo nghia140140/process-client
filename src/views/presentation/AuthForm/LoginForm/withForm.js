@@ -41,12 +41,13 @@ export default compose(
 				setSubmitting(false)
 
 				// harcode -> waiting api
-				if(true){
-					history.push(SETUP_PROFILE_PATH);
-				}
-				else{
-					history.push(APP_DEFAULT_PATH);
-				}
+				history.push(APP_DEFAULT_PATH);
+				// if(true){
+				// 	history.push(SETUP_PROFILE_PATH);
+				// }
+				// else{
+				// 	history.push(APP_DEFAULT_PATH);
+				// }
 			})
 			.catch(err=> {
 				console.log(err);

@@ -17,6 +17,8 @@ const reducer = (state = initalState, action) => {
             return { ...state, areaUnit: action.data }
         case TYPES.GET_CERTIFYCATE_OF_LANDS:
             return { ...state, certifycateOfLands: action.data }
+        case TYPES.ADD_FARMSEASION:
+            return state;
         default:
             return state;
     }

@@ -16,8 +16,11 @@ import {
 } from "~/configs/routesConfig";
 import { useHistory, withRouter } from "react-router-dom";
 import "./index.scss";
+// import getTemp from "~/state/ducks/season/actions";
 
 import {
+  addSeason,
+  getTemp,
   getWeightUnitAction,
   getAreaUnitAction,
   getCertifycateOfLandsAction,
@@ -60,7 +63,6 @@ const Container = styled.div`
     }
   }
 `;
-
 function AddSection() {
   const [step, setStep] = useState(0);
   const history = useHistory();
@@ -83,7 +85,6 @@ function AddSection() {
     process: [],
     materials: [],
   });
-
   useEffect(() => {
     dispatch(getAllFarmsAction());
     dispatch(getWeightUnitAction());
@@ -112,56 +113,6 @@ function AddSection() {
     // console.log({ info });
     setSeasonInfo((prevState) => ({ ...prevState, ...info }));
   };
-  // const handleAddSeason = () => {
-  //   fetch(API + "api/season-processes/create" + agent._id, {
-  //     method: "PUT",
-  //     headers: {
-  //       Accept: "application/json, text/plain",
-  //       "Content-Type": "application/json;charset=UTF-8",
-  //     },
-  //     body: JSON.stringify({
-  //       name: "Season Process 1",
-  //       note: "Note Season Process",
-  //       description: "Description Season Process",
-  //       stepsNumber: 3,
-  //       interval: 3,
-  //       status: "WAITING",
-  //       startDate: "2020-12-17T00:00:00.000Z",
-  //       endDate: "2021-02-17T00:00:00.000Z",
-  //       ratings: "EXCELLENT",
-  //       steps: [
-  //         {
-  //           name: "Season Process Step 1",
-  //           description: "Description Season Process Step",
-  //           startDate: "2020-12-19T00:00:00.000Z",
-  //           endDate: "2021-01-01T00:00:00.000Z",
-  //           interval: 3,
-  //           afterDays: 3,
-  //           startHour: 3,
-  //           status: "ACTIVATED",
-  //           note: "Note Season Process Step",
-  //         },
-  //         {
-  //           name: "Season Process Step 1",
-  //           description: "Description Season Process Step",
-  //           startDate: "2020-12-19T00:00:00.000Z",
-  //           endDate: "2021-01-01T00:00:00.000Z",
-  //           interval: 3,
-  //           afterDays: 3,
-  //           startHour: 3,
-  //           status: "ACTIVATED",
-  //           note: "Note Season Process Step",
-  //         },
-  //       ],
-  //     }),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {})
-  //     .catch((error) => {
-  //       alert("error" + error);
-  //     })
-  //     .done();
-  // };
   const handleChange = (currentStep) => {
     if (currentStep < 3) {
       setStep(currentStep);
@@ -180,17 +131,63 @@ function AddSection() {
         return <Complete />;
     }
   };
-
+  const body = {
+    name: "Farm Season Winter 1",
+    description: "Winter 2020 Season 1 of 3",
+    sowingDate: "2020-11-17T00:00:00.000Z",
+    harvestDate: "2021-05-17T00:00:00.000Z",
+    seed: "Cây Xoài",
+    status: "ACTIVATED",
+    seasonProcesses: [
+      {
+        name: "Season Process 1",
+        note: "Note Season Process",
+        description: "Description Season Process",
+        stepsNumber: 3,
+        interval: 3,
+        status: "WAITING",
+        startDate: "2020-12-17T00:00:00.000Z",
+        endDate: "2021-02-17T00:00:00.000Z",
+        ratings: "EXCELLENT",
+        steps: [
+          {
+            name: "Season Process Step 1",
+            description: "Description Season Process Step",
+            startDate: "2020-12-19T00:00:00.000Z",
+            endDate: "2021-01-01T00:00:00.000Z",
+            interval: 3,
+            afterDays: 3,
+            startHour: 3,
+            status: "ACTIVATED",
+            note: "Note Season Process Step",
+          },
+          {
+            name: "Season Process Step 1",
+            description: "Description Season Process Step",
+            startDate: "2020-12-19T00:00:00.000Z",
+            endDate: "2021-01-01T00:00:00.000Z",
+            interval: 3,
+            afterDays: 3,
+            startHour: 3,
+            status: "ACTIVATED",
+            note: "Note Season Process Step",
+          },
+        ],
+      },
+    ],
+  };
   const handleOnclickNext = () => {
     if (step < 3) {
       setStep(step + 1);
     } else {
+      console.log("start");
+
+      addSeason(body)
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
       console.log("Finish");
     }
   };
-  // console.log({ step });
-  // console.log({ seasonInfo });
-  // console.log({ listErr });
   return (
     <Container>
       <div className="container">

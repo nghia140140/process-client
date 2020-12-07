@@ -17,7 +17,7 @@ const vi = {
   /**
    * global validation
    */
-  phone_or_email_required: 'Vui lòng nhập email hoặc số điện thoại',
+  phone_or_email_required: 'Vui lòng nhập email',
   invalid_email: 'Email không hợp lệ',
   email_required: 'Vui lòng nhập Email',
   password_not_matched: 'Mật khẩu không trùng khớp',
@@ -121,6 +121,7 @@ const vi = {
   skip_setup: 'Cài đặt sau',
   first_name: 'Họ',
   last_name: 'Tên',
+  username: 'Tên tài khoản',
   invalid_phone: 'Số điện thoại không hợp lệ',
   email_or_phone: 'Email/Số điện thoại',
   sent_OTP: 'Chúng tôi đã gởi mã kích hoạt đến tài khoản của bạn',
@@ -136,6 +137,8 @@ const vi = {
   not_authenticated: 'Chưa chứng thực',
   require_firstName: 'Vui lòng nhập Họ',
   require_lastName: 'Vui lòng nhập Tên',
+  require_fullname: 'Vui lòng nhập Họ và Tên',
+  require_username: 'Vui lòng nhập tài khoản',
   vietnam: 'Việt Nam',
   completed_setup: 'Hoàn thành cài đặt',
   completed_setup_description: 'Cảm ơn đã hoàn thành thông tin cần thiết để có thể sử dụng hệ thống quản lý nông trại.Cảm ơn đã hoàn thành thông tin cần thiết để có thể sử dụng hệ thống quản lý nông trại.Cảm ơn đã hoàn thành thông tin cần thiết để có thể sử dụng hệ thống quản lý nông trại.',

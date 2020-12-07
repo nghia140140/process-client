@@ -9,7 +9,7 @@ export const resetPasswordInit = (data) => apiAction('post')(types.COMMON, `/api
 export const validateResetPasswordOTP = (data) => apiAction('post')(types.VERIFY_OTP, `/api/v1/sys/account/reset-password/validate-otp`, data, false)
 export const resetPasswordFinish = (data) => apiAction('post')(types.COMMON, `/api/v1/sys/account/reset-password/finish`, data, false)
 export const login = data => apiAction('post')(types.COMMON, '/api/auth/login', data, false);
-export const getProfile = () => apiAction('get')(types.GET_USER, '/services/sys/api/v1/sys-accounts/profile', null, true);
+export const getProfile = () => apiAction('get')(types.GET_USER, '/api/account/profile', null, true);
 
 /**
  * update profile
